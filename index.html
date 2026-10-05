@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Клининг в Астане — уборка квартир и офисов от 400 ₸/м² | Quality Клининг Company</title>
+<meta name="description" content="Профессиональный клининг в Астане: влажная уборка от 400 ₸/м², генеральная от 800 ₸/м², после ремонта от 850 ₸/м², химчистка мебели от 7 000 ₸. Своя химия и техника, 7 лет опыта, 4.9★ в 2ГИС. Заявки 24/7.">
+<!-- Концепт: пока компания не согласилась, сайт закрыт от поисковиков. Запуск: "noindex, nofollow" → "index, follow" + canonical/og:url/url/image в JSON-LD с доменом, sitemap.xml. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a2463">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Quality Клининг Company">
+<meta property="og:title" content="Quality Клининг Company — профессиональная уборка в Астане">
+<meta property="og:description" content="Квартиры, дома и офисы. Своя химия и техника, 7 лет опыта, 4.9★ в 2ГИС. Влажная уборка от 400 ₸/м².">
+<meta property="og:image" content="https://images.unsplash.com/photo-1656122381069-9ec666d95cf1?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=75">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&amp;family=Caveat:wght@700&amp;display=swap">
+<link rel="stylesheet" href="styles.css">
+<script>
+(function(){var d=document.documentElement;d.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('anim');try{if(!sessionStorage.getItem('qc-intro'))d.classList.add('intro-on')}catch(e){d.classList.add('intro-on')}
+setTimeout(function(){d.classList.remove('anim','intro-on')},6000)})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Quality Клининг Company",
+  "description": "Клининговая компания в Астане: влажная и генеральная уборка, уборка после ремонта и после прежних жильцов, мытьё окон и натяжных потолков, стирка штор, озонирование, химчистка мебели и ковров.",
+  "telephone": ["+77779527961", "+77013939449"],
+  "email": "kacestvennaauborka8695@gmail.com",
+  "priceRange": "от 400 ₸/м²",
+  "paymentAccepted": "Карта, наличные, перевод",
+  "areaServed": "Астана",
+  "address": { "@type": "PostalAddress", "streetAddress": "проспект Мангилик Ел, 53", "addressLocality": "Астана", "postalCode": "Z05P1P4", "addressCountry": "KZ" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 51.094103, "longitude": 71.42482 },
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" },
+  "sameAs": ["https://2gis.kz/astana/firm/70000001059630800", "https://www.instagram.com/qualiti_cleaning_company/"]
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sq-g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4cb3ff"/><stop offset="1" stop-color="#0d5fd6"/></linearGradient>
+  </defs>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-broom" viewBox="0 0 24 24"><path d="M20 3.5 12.5 11"/><path d="M12.5 11c-2.2-1.4-5-.6-6.1 1.6L3.5 20c3.6.4 7.4-.6 9.3-3.3 1.4-1.9 1.4-4.2-.3-5.7Z"/><path d="M6.6 15.6 9 18M8.4 13.4l2.8 2.8"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M10 3.5l1.9 5.1L17 10.5l-5.1 1.9L10 17.5l-1.9-5.1L3 10.5l5.1-1.9Z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/></symbol>
+  <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M3 17.5h18v2.5H3z"/><path d="M4.5 17.5a7.5 7.5 0 0 1 15 0"/><path d="M10 10.5V5.8h4v4.7"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5.5 9.5V20H11"/><circle cx="16" cy="13.5" r="2.6"/><path d="M16 16.1V21M16 19h2"/></symbol>
+  <symbol id="i-window" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18M4 12h16"/><path d="M14.8 6l2.2 2.2"/></symbol>
+  <symbol id="i-ceiling" viewBox="0 0 24 24"><path d="M3 4.5h18"/><path d="M12 4.5V9"/><path d="M6.5 15a5.5 5.5 0 0 1 11 0Z"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-curtain" viewBox="0 0 24 24"><path d="M3 3.5h18"/><path d="M5 3.5V21c2.6-2.8 3.8-8 4-17.5M19 3.5V21c-2.6-2.8-3.8-8-4-17.5"/><path d="M8 13.5c1.5.5 2.5.5 3.5 0"/></symbol>
+  <symbol id="i-ozone" viewBox="0 0 24 24"><path d="M7 18.5a4.2 4.2 0 0 1-.6-8.4 5.8 5.8 0 0 1 11.2 1.6 3.4 3.4 0 0 1-.4 6.8Z"/><circle cx="10" cy="14" r="1.6"/><path d="M13.2 13.2c.4-.6 1.8-.6 1.8.3 0 .8-1.8 1.4-1.8 2h1.9"/></symbol>
+  <symbol id="i-sofa" viewBox="0 0 24 24"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M3 13a2 2 0 0 1 4 0v2h10v-2a2 2 0 0 1 4 0v5H3Z"/><path d="M5 18v2M19 18v2"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.3A8.6 8.6 0 1 1 8 19.3Z"/><path d="M9 8.3c-.2 3.5 3.2 6.9 6.7 6.7l.9-1.7-2.2-1-1 .9a5 5 0 0 1-2.6-2.6l.9-1-1-2.2Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6Z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9-9.5C2 6.8 4.3 4 7.3 4c2 0 3.5 1.2 4.7 2.8C13.2 5.2 14.7 4 16.7 4c3 0 5.3 2.8 4.3 6.5-1.5 4.9-9 9.5-9 9.5Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-vacuum" viewBox="0 0 24 24"><circle cx="8" cy="16.5" r="3.5"/><path d="M11.5 16.5H20v-2.5a4 4 0 0 0-4-4h-2"/><path d="M14 10 18.5 3"/><path d="M5 20.5h14"/></symbol>
+  <symbol id="i-usercheck" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M3 20a7 7 0 0 1 11-5.7"/><path d="M15 18l2 2 4-4"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-7 10-9"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5l8-2v18M12 8h8v13"/><path d="M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2M2 21h20"/></symbol>
+  <symbol id="i-squeegee" viewBox="0 0 24 24"><path d="M5 7.5l14-4"/><path d="M12 5.5l1.2 4"/><path d="M13.2 9.5 16 20"/></symbol>
+</svg>
+
+<!-- Заставка: «грязное стекло», которое протирает скребок (один раз за сессию) -->
+<div class="intro" id="intro" aria-hidden="true">
+  <canvas></canvas>
+  <svg class="squeegee" viewBox="0 0 120 400" preserveAspectRatio="none">
+    <rect x="108" y="6" width="12" height="388" rx="6" fill="#0a2463"/>
+    <rect x="90" y="0" width="20" height="400" rx="7" fill="url(#sq-g)"/>
+    <rect x="95" y="22" width="4" height="356" rx="2" fill="#fff" opacity=".5"/>
+    <path d="M94 212 58 170" stroke="#c9d6e8" stroke-width="10" stroke-linecap="round"/>
+    <path d="M60 172 10 118" stroke="#0a2463" stroke-width="22" stroke-linecap="round"/>
+    <path d="M50 160 18 126" stroke="#4cb3ff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+  </svg>
+</div>
+
+<header class="header">
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Quality Клининг Company — на главную"><img src="img/logo.png" alt="Quality Клининг Company" width="288" height="268"></a>
+    <nav class="nav" id="nav" aria-label="Меню">
+      <a href="#services">Услуги</a>
+      <a href="#calc">Цены</a>
+      <a href="#before-after">До и после</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+      <a class="nav-phone" href="tel:+77779527961">+7 777 952 7961</a>
+    </nav>
+    <a class="header-phone" href="tel:+77779527961"><svg class="ic"><use href="#i-phone"/></svg>+7 777 952 7961</a>
+    <a class="btn btn-primary btn-sm header-cta magnet" href="#calc">Заказать уборку</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Меню"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <img class="hero-bg" src="https://images.unsplash.com/photo-1656122381069-9ec666d95cf1?auto=format&amp;fit=crop&amp;w=1920&amp;q=70" srcset="https://images.unsplash.com/photo-1656122381069-9ec666d95cf1?auto=format&amp;fit=crop&amp;w=900&amp;q=70 900w, https://images.unsplash.com/photo-1656122381069-9ec666d95cf1?auto=format&amp;fit=crop&amp;w=1920&amp;q=70 1920w" sizes="100vw" alt="" fetchpriority="high">
+  <div class="hero-veil"></div>
+  <div class="bubbles" aria-hidden="true">
+    <i style="--x:6%;--s:46px;--d:15s;--dl:-2s"></i><i style="--x:22%;--s:22px;--d:11s;--dl:-7s"></i><i style="--x:38%;--s:64px;--d:19s;--dl:-11s"></i>
+    <i style="--x:55%;--s:30px;--d:13s;--dl:-4s"></i><i style="--x:70%;--s:52px;--d:17s;--dl:-9s"></i><i style="--x:86%;--s:26px;--d:12s;--dl:-1s"></i><i style="--x:95%;--s:40px;--d:16s;--dl:-13s"></i>
+  </div>
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="hero-pill" data-hero><span class="dot"></span>Клининг в Астане · 7 лет опыта</p>
+      <h1 data-hero><span class="line"><span>Профессиональная</span></span><span class="line"><span>уборка для вашего</span></span><span class="line big"><span>комфорта</span></span></h1>
+      <p class="script" data-hero>Чистое пространство — счастливые люди! <svg class="ic heart"><use href="#i-heart"/></svg><svg class="swoosh" viewBox="0 0 300 20" preserveAspectRatio="none"><path pathLength="1" d="M3 15C80 5 190 2 297 9"/></svg></p>
+      <p class="hero-lead" data-hero>Квартиры, дома и офисы. Привозим свою химию, пылесосы и парогенераторы — вам ничего не нужно покупать. Заявки принимаем круглосуточно.</p>
+      <div class="hero-cta" data-hero>
+        <a class="btn btn-primary btn-lg btn-shine magnet" href="#calc"><svg class="ic"><use href="#i-calc"/></svg>Рассчитать стоимость</a>
+        <a class="btn btn-ghost btn-lg magnet" href="https://wa.me/77779527961" data-wa target="_blank" rel="noopener"><svg class="ic wa-ic"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
+      </div>
+      <ul class="hero-trust" data-hero>
+        <li><svg class="ic star"><use href="#i-star"/></svg><b>4.9</b> в 2ГИС · 306 оценок</li>
+        <li><svg class="ic"><use href="#i-card"/></svg>Карта, наличные, перевод</li>
+      </ul>
+    </div>
+    <div class="hero-visual" data-hero>
+      <div class="arch"><img src="img/team.jpg" alt="Клинер Quality Клининг Company в фирменном фартуке" width="413" height="550"></div>
+      <div class="chip chip-rating" data-depth="26"><svg class="ic"><use href="#i-star"/></svg><span><b>4.9</b><br>306 оценок в 2ГИС</span></div>
+      <div class="chip chip-years" data-depth="-30"><b>7 лет</b><span>в клининге</span></div>
+      <div class="chip chip-247" data-depth="18"><svg class="ic"><use href="#i-clock"/></svg><span>Заявки<br><b>24/7</b></span></div>
+      <span class="spark s1" data-depth="40">✦</span><span class="spark s2" data-depth="-24">✦</span><span class="spark s3" data-depth="32">✦</span>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 64C240 120 480 8 720 40s480 88 720 16v64H0Z"/></svg>
+</section>
+
+<section class="section bg-ice" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-reveal><span class="eb-ic"><svg class="ic"><use href="#i-home"/></svg></span>Наши услуги</p>
+      <h2 data-split>Уборка под любую <em>задачу</em></h2>
+      <p class="sec-sub" data-reveal>Цена за квадратный метр. Химия, инвентарь и техника уже включены.</p>
+    </div>
+    <div class="svc-grid" data-stagger>
+      <article class="svc card lift tilt">
+        <span class="ic-circle"><svg class="ic"><use href="#i-broom"/></svg></span>
+        <h3>Влажная уборка</h3>
+        <p>Поддерживающая уборка квартиры или офиса: пыль на всех поверхностях, полы, кухня и санузел.</p>
+        <div class="svc-foot"><span class="price">от <b>400</b> ₸/м²</span><button class="link-btn" type="button" data-pick="wet">Рассчитать <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+      </article>
+      <article class="svc card lift tilt">
+        <span class="ic-circle"><svg class="ic"><use href="#i-sparkle"/></svg></span>
+        <h3>Генеральная уборка</h3>
+        <p>Отмываем всё — от москитных сеток и окон до люстр, батарей и труднодоступных мест.</p>
+        <div class="svc-foot"><span class="price">от <b>800</b> ₸/м²</span><button class="link-btn" type="button" data-pick="general">Рассчитать <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+      </article>
+      <article class="svc card lift tilt">
+        <span class="ic-circle"><svg class="ic"><use href="#i-helmet"/></svg></span>
+        <h3>Уборка после ремонта</h3>
+        <p>Убираем строительную пыль и грязь — в квартиру можно заезжать сразу после нас.</p>
+        <div class="svc-foot"><span class="price">от <b>850</b> ₸/м²</span><button class="link-btn" type="button" data-pick="renovation">Рассчитать <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+      </article>
+      <article class="svc card lift tilt">
+        <span class="ic-circle"><svg class="ic"><use href="#i-key"/></svg></span>
+        <h3>После прежних жильцов</h3>
+        <p>Перед заселением: квартира станет свежей и чистой, будто в ней никто не жил.</p>
+        <div class="svc-foot"><span class="price">от <b>850</b> ₸/м²</span><button class="link-btn" type="button" data-pick="moveout">Рассчитать <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+      </article>
+    </div>
+
+    <div class="extras" data-reveal>
+      <div class="extras-head"><span class="eb-ic"><svg class="ic"><use href="#i-plus"/></svg></span><h3>Дополнительные услуги</h3></div>
+      <div class="extras-grid" data-stagger>
+        <div class="extra"><span class="ic-circle sm"><svg class="ic"><use href="#i-window"/></svg></span><div><h4>Мытьё окон любой сложности</h4><p>Включая наружную сторону</p></div></div>
+        <div class="extra"><span class="ic-circle sm"><svg class="ic"><use href="#i-ceiling"/></svg></span><div><h4>Мытьё натяжных потолков</h4><p>Аккуратно и без разводов</p></div></div>
+        <div class="extra"><span class="ic-circle sm"><svg class="ic"><use href="#i-curtain"/></svg></span><div><h4>Стирка штор и тюля</h4><p>Профессиональная стирка</p></div></div>
+        <div class="extra"><span class="ic-circle sm"><svg class="ic"><use href="#i-ozone"/></svg></span><div><h4>Озонирование воздуха</h4><p>Убирает запахи табака, гари, сырости, гнили и животных, уничтожает бактерии и микроорганизмы в воздухе</p></div></div>
+        <div class="extra"><span class="ic-circle sm"><svg class="ic"><use href="#i-sofa"/></svg></span><div><h4>Химчистка мебели и ковров</h4><p>Диваны, кресла, стулья, матрасы, ковры и ковровые покрытия + дезинфекция</p><span class="price">от <b>7 000</b> ₸</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ba" id="before-after">
+  <div class="ba-pin">
+    <div class="wrap ba-in">
+      <div class="sec-head center">
+        <p class="eyebrow" data-reveal><span class="eb-ic"><svg class="ic"><use href="#i-sparkle"/></svg></span>До и после</p>
+        <h2 data-split>Прокрутите — и станет <em>чисто</em></h2>
+      </div>
+      <div class="ba-tabs">
+        <button type="button" class="on" aria-pressed="true" data-ba="living">Гостиная</button>
+        <button type="button" aria-pressed="false" data-ba="kitchen">Кухня</button>
+        <button type="button" aria-pressed="false" data-ba="bath">Ванная</button>
+      </div>
+      <div class="ba-stage" id="ba">
+        <div class="ba-before"><img src="https://images.unsplash.com/photo-1633505899118-4ca6bd143043?auto=format&amp;fit=crop&amp;w=1600&amp;h=1000&amp;q=70" alt="Комната до уборки" loading="lazy"></div>
+        <div class="ba-after"><img src="https://images.unsplash.com/photo-1633505899118-4ca6bd143043?auto=format&amp;fit=crop&amp;w=1600&amp;h=1000&amp;q=70" alt="Комната после уборки" loading="lazy"></div>
+        <div class="ba-line"><span class="ba-handle"><svg class="ic"><use href="#i-squeegee"/></svg></span></div>
+        <span class="ba-tag t-after">После</span><span class="ba-tag t-before">До</span>
+        <div class="ba-meter"><span>Чистота</span><b id="ba-pct">56%</b></div>
+      </div>
+      <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Сравнить до и после">
+      <p class="ba-note">Фото-пример. На сайте будут ваши реальные работы.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-ice" id="calc">
+  <div class="wrap calc-grid">
+    <div class="calc-copy">
+      <p class="eyebrow" data-reveal><span class="eb-ic"><svg class="ic"><use href="#i-calc"/></svg></span>Калькулятор</p>
+      <h2 data-split>Узнайте цену за <em>10 секунд</em></h2>
+      <p class="sec-sub" data-reveal>Выберите тип уборки и площадь, отправьте расчёт в WhatsApp — менеджер подтвердит время и точную сумму.</p>
+      <ul class="ticks" data-stagger>
+        <li><svg class="ic"><use href="#i-check"/></svg>Химия и техника включены в цену</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Заявки принимаем круглосуточно</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Оплата картой, наличными или переводом</li>
+      </ul>
+    </div>
+    <form class="calc card" id="calc-form" data-reveal>
+      <fieldset>
+        <legend>Тип уборки</legend>
+        <div class="seg-opts">
+          <label class="opt"><input type="radio" name="kind" value="wet" checked><span>Влажная<small>от 400 ₸/м²</small></span></label>
+          <label class="opt"><input type="radio" name="kind" value="general"><span>Генеральная<small>от 800 ₸/м²</small></span></label>
+          <label class="opt"><input type="radio" name="kind" value="renovation"><span>После ремонта<small>от 850 ₸/м²</small></span></label>
+          <label class="opt"><input type="radio" name="kind" value="moveout"><span>После жильцов<small>от 850 ₸/м²</small></span></label>
+        </div>
+      </fieldset>
+      <div class="area">
+        <div class="area-row"><label for="area">Площадь</label><span class="area-val"><input id="area-num" type="number" min="10" max="1000" value="60" inputmode="numeric" aria-label="Площадь в квадратных метрах"> м²</span></div>
+        <input id="area" type="range" min="20" max="300" step="5" value="60" aria-label="Площадь, ползунок">
+      </div>
+      <fieldset>
+        <legend>Дополнительно</legend>
+        <div class="chips-opts">
+          <label class="chip-opt"><input type="checkbox" name="extra" value="Мытьё окон"><span>Окна</span></label>
+          <label class="chip-opt"><input type="checkbox" name="extra" value="Мытьё натяжных потолков"><span>Натяжные потолки</span></label>
+          <label class="chip-opt"><input type="checkbox" name="extra" value="Стирка штор и тюля"><span>Шторы и тюль</span></label>
+          <label class="chip-opt"><input type="checkbox" name="extra" value="Озонирование"><span>Озонирование</span></label>
+          <label class="chip-opt"><input type="checkbox" name="extra" value="Химчистка мягкой мебели" data-price="7000"><span>Химчистка мебели <small>от 7 000 ₸</small></span></label>
+        </div>
+      </fieldset>
+      <div class="total" aria-live="polite">
+        <span>Предварительно</span>
+        <output id="total">от 24 000 ₸</output>
+        <small>Окна, потолки, шторы и озонирование менеджер посчитает отдельно</small>
+      </div>
+      <button class="btn btn-primary btn-lg btn-block magnet" type="submit"><svg class="ic"><use href="#i-wa"/></svg>Отправить расчёт в WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-reveal><span class="eb-ic"><svg class="ic"><use href="#i-shield"/></svg></span>Почему мы</p>
+      <h2 data-split>Чистота в каждом <em>уголке</em></h2>
+    </div>
+    <div class="stats" data-stagger>
+      <div class="stat"><b data-count="4.9">4.9</b><span>рейтинг в 2ГИС</span></div>
+      <div class="stat"><b data-count="306">306</b><span>оценок клиентов</span></div>
+      <div class="stat"><b><span data-count="7">7</span> лет</b><span>в клининге</span></div>
+      <div class="stat"><b>24/7</b><span>приём заявок</span></div>
+    </div>
+    <div class="feat-grid" data-stagger>
+      <div class="feat card lift tilt"><span class="ic-circle sm"><svg class="ic"><use href="#i-vacuum"/></svg></span><div><h3>Своя химия и техника</h3><p>Привозим всё сами: средства, инвентарь, пылесосы и парогенераторы.</p></div></div>
+      <div class="feat card lift tilt"><span class="ic-circle sm"><svg class="ic"><use href="#i-usercheck"/></svg></span><div><h3>Проверка качества</h3><p>Администратор проверяет результат, прежде чем вы примете работу.</p></div></div>
+      <div class="feat card lift tilt"><span class="ic-circle sm"><svg class="ic"><use href="#i-clock"/></svg></span><div><h3>Приезжаем вовремя</h3><p>Ко времени, которое вы выбрали, со всем необходимым.</p></div></div>
+      <div class="feat card lift tilt"><span class="ic-circle sm"><svg class="ic"><use href="#i-leaf"/></svg></span><div><h3>Без резкого запаха</h3><p>После уборки дома свежо, а не пахнет химией.</p></div></div>
+      <div class="feat card lift tilt"><span class="ic-circle sm"><svg class="ic"><use href="#i-sparkle"/></svg></span><div><h3>До каждой детали</h3><p>Люстры, батареи, плинтусы и места, до которых обычно не доходят руки.</p></div></div>
+      <div class="feat card lift tilt"><span class="ic-circle sm"><svg class="ic"><use href="#i-card"/></svg></span><div><h3>Удобная оплата</h3><p>Картой, наличными или переводом с карты.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-ice">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow" data-reveal><span class="eb-ic"><svg class="ic"><use href="#i-check"/></svg></span>Как мы работаем</p>
+      <h2 data-split>Четыре шага до <em>чистоты</em></h2>
+    </div>
+    <div class="steps-wrap">
+      <span class="steps-line" aria-hidden="true"></span>
+      <ol class="steps">
+        <li><span class="num">1</span><h3>Заявка</h3><p>WhatsApp, звонок или расчёт с сайта — круглосуточно.</p></li>
+        <li><span class="num">2</span><h3>Расчёт и время</h3><p>Уточним площадь и задачи, назовём цену и удобное время.</p></li>
+        <li><span class="num">3</span><h3>Уборка</h3><p>Команда приезжает со своей химией, пылесосами и парогенераторами.</p></li>
+        <li><span class="num">4</span><h3>Проверка</h3><p>Администратор проверяет результат, вы принимаете работу.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="b2b card" data-reveal>
+      <div class="b2b-img"><img src="https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&amp;fit=crop&amp;w=1200&amp;h=900&amp;q=70" alt="Светлый офис после уборки" loading="lazy"></div>
+      <div class="b2b-copy">
+        <p class="eyebrow"><span class="eb-ic"><svg class="ic"><use href="#i-building"/></svg></span>Для бизнеса</p>
+        <h2>Офисы и большие объекты</h2>
+        <p>Убираем не только квартиры: офисы, коммерческие помещения и спортивные объекты. Например, делали генеральную уборку Дворца единоборств имени Жаксылыка Ушкемпирова.</p>
+        <div class="b2b-btns">
+          <a class="btn btn-primary magnet" href="https://wa.me/77779527961" data-wa="Здравствуйте! Нужна уборка офиса / объекта." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>Обсудить объект</a>
+          <a class="link-btn" href="https://www.instagram.com/reel/C1aEMgKrSAp/" target="_blank" rel="noopener">Видео уборки в Instagram <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-ice" id="reviews">
+  <div class="wrap">
+    <div class="rating-row">
+      <div class="sec-head">
+        <p class="eyebrow" data-reveal><span class="eb-ic"><svg class="ic"><use href="#i-heart"/></svg></span>Отзывы</p>
+        <h2 data-split>306 оценок. Средняя — <em>4.9</em></h2>
+      </div>
+      <a class="rating-big card" href="https://2gis.kz/astana/firm/70000001059630800/tab/reviews" target="_blank" rel="noopener" data-reveal>
+        <b>4.9</b>
+        <span><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>Все 294 отзыва в 2ГИС →</span>
+      </a>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="mq-track">
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>Не надо ничего искать из химии и тряпок — всё приносят сами, со своими пылесосами и парогенераторами. В генеральной моют всё: от москитных сеток до люстр и батарей.</blockquote><figcaption><span class="ava">А</span><span><b>Айгерим К.</b>2ГИС, май 2026</span></figcaption></figure>
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>После ремонта было много пыли и грязи — девушки всё отмыли до идеального состояния. После их работы аж дышать стало легче!</blockquote><figcaption><span class="ava">А</span><span><b>Ахроров</b>2ГИС, октябрь 2026</span></figcaption></figure>
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>Заказывали генеральную уборку перед приездом гостей. Всё чисто, аккуратно и без запаха химии.</blockquote><figcaption><span class="ava">F</span><span><b>Flower F</b>2ГИС, сентябрь 2026</span></figcaption></figure>
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>Квартира после прежних жильцов была запущенной. После уборки — свежая и чистая, будто в ней никто не жил.</blockquote><figcaption><span class="ava">А</span><span><b>Амантай С.</b>2ГИС, сентябрь 2026</span></figcaption></figure>
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>Приехали вовремя, всё необходимое с собой, работают быстро и аккуратно. Однозначно рекомендую.</blockquote><figcaption><span class="ava">Д</span><span><b>Динара Р.</b>2ГИС, сентябрь 2026</span></figcaption></figure>
+    </div>
+  </div>
+  <div class="marquee rev">
+    <div class="mq-track">
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>Уже второй год заказываю — идеальная чистота, никаких разводов. Работают на совесть.</blockquote><figcaption><span class="ava">А</span><span><b>Алма Т.</b>2ГИС, июль 2026</span></figcaption></figure>
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>Впервые заказала уборку после ремонта и была в восторге — всё сверкало и блестело.</blockquote><figcaption><span class="ava">Б</span><span><b>Бахытгуль И.</b>2ГИС, сентябрь 2026</span></figcaption></figure>
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>Всё чисто, свежо, ни одной пылинки. Команда вежливая, работает быстро и слаженно.</blockquote><figcaption><span class="ava">Ж</span><span><b>Жансая Р.</b>2ГИС, март 2026</span></figcaption></figure>
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>Несколько раз вызывали — каждый раз всё отлично. После уборки дом преображается.</blockquote><figcaption><span class="ava">Т</span><span><b>Темирлан Р.</b>2ГИС, сентябрь 2026</span></figcaption></figure>
+      <figure class="rcard card"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><blockquote>Үйге келгенде бәрі жарқырап, айнадай таза болып тұр. Рахмет!</blockquote><figcaption><span class="ava">Б</span><span><b>Балжан Б.</b>2ГИС, сентябрь 2026</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow" data-reveal><span class="eb-ic"><svg class="ic"><use href="#i-plus"/></svg></span>Вопросы</p>
+      <h2 data-split>Частые <em>вопросы</em></h2>
+    </div>
+    <div class="faq-list" data-stagger>
+      <details><summary>Сколько стоит уборка квартиры?<i></i></summary><p>Влажная — от 400 ₸/м², генеральная — от 800 ₸/м², после ремонта и после прежних жильцов — от 850 ₸/м². Например, генеральная уборка квартиры 60 м² — от 48 000 ₸. Точную сумму менеджер назовёт после короткого описания или фото.</p></details>
+      <details><summary>Нужно ли покупать средства и инвентарь?<i></i></summary><p>Нет. Привозим профессиональную химию, инвентарь, пылесосы и парогенераторы.</p></details>
+      <details><summary>Что входит в генеральную уборку?<i></i></summary><p>Вся квартира целиком: окна и москитные сетки, люстры, батареи, кухня, санузел и труднодоступные места. Стирку штор, мытьё натяжных потолков и химчистку мебели можно добавить отдельно.</p></details>
+      <details><summary>Когда можно заказать уборку?<i></i></summary><p>Заявки принимаем круглосуточно, работаем каждый день по предварительной записи. Чем раньше напишете, тем больше выбор времени.</p></details>
+      <details><summary>Убираете офисы и большие помещения?<i></i></summary><p>Да: офисы, коммерческие помещения и большие объекты — например, генеральная уборка Дворца единоборств имени Жаксылыка Ушкемпирова.</p></details>
+      <details><summary>Как можно оплатить?<i></i></summary><p>Картой, наличными или переводом с карты.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacts">
+  <svg class="wave wave-top" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 64C240 120 480 8 720 40s480 88 720 16v64H0Z"/></svg>
+  <span class="spark c1">✦</span><span class="spark c2">✦</span><span class="spark c3">✦</span>
+  <div class="wrap cta-in">
+    <div>
+      <p class="script light" data-reveal>С нами чисто всегда! <svg class="ic heart"><use href="#i-heart"/></svg></p>
+      <h2 data-split>Закажите уборку — остальное мы сделаем <em>сами</em></h2>
+      <div class="cta-btns" data-reveal>
+        <a class="btn btn-white btn-lg magnet" href="https://wa.me/77779527961" data-wa target="_blank" rel="noopener"><svg class="ic wa-ic"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
+        <a class="btn btn-outline-light btn-lg magnet" href="tel:+77779527961"><svg class="ic"><use href="#i-phone"/></svg>Позвонить</a>
+      </div>
+      <div class="badges" data-stagger>
+        <span><svg class="ic"><use href="#i-shield"/></svg>Гарантия качества</span>
+        <span><svg class="ic"><use href="#i-sparkle"/></svg>Чистота в каждом уголке</span>
+        <span><svg class="ic"><use href="#i-heart"/></svg>Доверие клиентов</span>
+      </div>
+    </div>
+    <div class="contact-card" data-reveal>
+      <a class="phone-big" href="tel:+77779527961"><svg class="ic"><use href="#i-phone"/></svg>+7 777 952 7961</a>
+      <a class="phone-big" href="tel:+77013939449"><svg class="ic"><use href="#i-phone"/></svg>+7 701 393 9449</a>
+      <ul class="contact-list">
+        <li><svg class="ic"><use href="#i-pin"/></svg><span>проспект Мангилик Ел, 53, Есиль район, Астана · <a href="https://2gis.kz/astana/firm/70000001059630800" target="_blank" rel="noopener">маршрут в 2ГИС</a></span></li>
+        <li><svg class="ic"><use href="#i-clock"/></svg><span>Круглосуточно, без выходных — по предварительной записи</span></li>
+        <li><svg class="ic"><use href="#i-mail"/></svg><a href="mailto:kacestvennaauborka8695@gmail.com">kacestvennaauborka8695@gmail.com</a></li>
+        <li><svg class="ic"><use href="#i-ig"/></svg><a href="https://www.instagram.com/qualiti_cleaning_company/" target="_blank" rel="noopener">@qualiti_cleaning_company</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="logo-badge" href="#top" aria-label="Наверх"><img src="img/logo.png" alt="Quality Клининг Company" width="288" height="268" loading="lazy"></a>
+    <span>© 2026 Quality Клининг Company · Клининг в Астане</span>
+    <span>Чистота · Комфорт · Забота</span>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/77779527961" data-wa target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg class="ic"><use href="#i-wa"/></svg></a>
+
+</body>
+</html>
