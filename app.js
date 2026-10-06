@@ -73,12 +73,8 @@ const calc = () => {
   return { kind, area, extras: extras.map(e => e.value), sum };
 };
 const setRangeFill = r => r.style.setProperty('--p', (r.value - r.min) / (r.max - r.min) * 100 + '%');
-const vacOpt = $('#vac-opt'); // наш пылесос доплачивается только во влажной уборке
 const render = () => {
   setRangeFill(range);
-  const wet = form.querySelector('[name=kind]:checked').value === 'wet';
-  vacOpt.hidden = !wet;
-  if (!wet) $('input', vacOpt).checked = false;
   const { sum } = calc();
   const paint = () => { out.textContent = 'от ' + fmt(shown.v) + ' ₸'; };
   if (motion) gsap.to(shown, { v: sum, duration: .6, ease: 'power3.out', overwrite: true, onUpdate: paint });
