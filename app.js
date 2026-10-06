@@ -73,8 +73,12 @@ const calc = () => {
   return { kind, area, extras: extras.map(e => e.value), sum };
 };
 const setRangeFill = r => r.style.setProperty('--p', (r.value - r.min) / (r.max - r.min) * 100 + '%');
+const vacOpt = $('#vac-opt'); // наш пылесос доплачивается только во влажной уборке
 const render = () => {
   setRangeFill(range);
+  const wet = form.querySelector('[name=kind]:checked').value === 'wet';
+  vacOpt.hidden = !wet;
+  if (!wet) $('input', vacOpt).checked = false;
   const { sum } = calc();
   const paint = () => { out.textContent = 'от ' + fmt(shown.v) + ' ₸'; };
   if (motion) gsap.to(shown, { v: sum, duration: .6, ease: 'power3.out', overwrite: true, onUpdate: paint });
@@ -106,14 +110,51 @@ const setBA = p => {
   stage.style.setProperty('--p', p * 100 + '%');
   baPct.textContent = Math.round(12 + 88 * p) + '%';
 };
-const BA = { living: '1633505899118-4ca6bd143043', kitchen: '1610276173132-c47d148ab626', bath: '1552321554-5fefe8c9ef14' };
+// «Наш объект» — реальная пара фото; остальные вкладки — пример, «до» нарисовано фильтром (класс .fake)
+const unsplash = id => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&h=1000&q=70`;
+const BA = {
+  real: { before: 'img/ba-real-before.jpg', after: 'img/ba-real-after.jpg', note: 'Реальная работа Quality Клининг: полка под раковиной до и после уборки.' },
+  living: { id: '1633505899118-4ca6bd143043' }, kitchen: { id: '1610276173132-c47d148ab626' }, bath: { id: '1552321554-5fefe8c9ef14' },
+};
+const baNote = $('#ba-note'), [baBefore, baAfter] = [$('.ba-before img', stage), $('.ba-after img', stage)];
 $$('.ba-tabs button').forEach(b => b.addEventListener('click', () => {
   $$('.ba-tabs button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
-  const url = `https://images.unsplash.com/photo-${BA[b.dataset.ba]}?auto=format&fit=crop&w=1600&h=1000&q=70`, pre = new Image();
+  const s = BA[b.dataset.ba], before = s.id ? unsplash(s.id) : s.before, after = s.id ? unsplash(s.id) : s.after, pre = new Image();
   stage.classList.add('swap');
-  pre.onload = pre.onerror = () => { $$('img', stage).forEach(i => { i.src = url; }); stage.classList.remove('swap'); };
-  pre.src = url;
+  pre.onload = pre.onerror = () => {
+    baBefore.src = before; baAfter.src = after;
+    stage.classList.toggle('fake', !!s.id);
+    baNote.textContent = s.note || 'Иллюстрация. Реальную работу смотрите во вкладке «Наш объект» и в разделе «Наши работы».';
+    stage.classList.remove('swap');
+  };
+  pre.src = after;
 }));
+
+/* ---------- что входит: чек-листы ---------- */
+const setCl = name => {
+  $$('.cl-tabs [data-cl]').forEach(x => { x.classList.toggle('on', x.dataset.cl === name); x.setAttribute('aria-pressed', x.dataset.cl === name); });
+  $$('.cl-panel').forEach(p => { p.hidden = p.dataset.panel !== name; });
+  const panel = $(`.cl-panel[data-panel="${name}"]`);
+  if (motion) {
+    gsap.from($$('.cl-scope, .cl-card, .cl-box', panel), { y: 26, opacity: 0, duration: .6, stagger: .06, ease: 'power3.out' });
+    ScrollTrigger.refresh(); // высота блока меняется — пересчитать закреплённую секцию ниже
+  }
+};
+$$('[data-cl]').forEach(b => b.addEventListener('click', () => {
+  setCl(b.dataset.cl);
+  if (!b.closest('.cl-tabs')) scrollToEl($('#checklist'));
+}));
+
+/* ---------- живые фото: просмотр крупно ---------- */
+const lb = $('#lightbox'), lbBody = $('.lb-body', lb), lbCap = $('.lb-cap', lb);
+$$('.g-tile').forEach(t => t.addEventListener('click', () => {
+  lbBody.replaceChildren(...$$('img', t).map(i => { const c = i.cloneNode(); c.removeAttribute('loading'); return c; }));
+  lbCap.textContent = $('.cap', t)?.textContent || '';
+  lb.showModal();
+  lenis?.stop();
+}));
+lb.addEventListener('close', () => lenis?.start());
+lb.addEventListener('click', e => { if (e.target === lb || e.target.closest('.lb-close')) lb.close(); });
 baRange.addEventListener('input', () => { setRangeFill(baRange); setBA(baRange.value / 100); });
 setRangeFill(baRange);
 setBA(.5);
