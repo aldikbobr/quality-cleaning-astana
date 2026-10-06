@@ -27,6 +27,10 @@ if (motion) {
 }
 const scrollToEl = el => lenis ? lenis.scrollTo(el, { offset: -76, duration: 1.4 }) : el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
 
+// кнопка WhatsApp прячется, пока на экране блок контактов (там свои кнопки)
+const fab = $('.fab'), contacts = $('#contacts');
+if (fab && contacts && 'IntersectionObserver' in window) new IntersectionObserver(([e]) => fab.classList.toggle('away', e.isIntersecting), { threshold: .25 }).observe(contacts);
+
 /* ---------- шапка и меню ---------- */
 const header = $('.header'), burger = $('.burger');
 let lastY = 0;
