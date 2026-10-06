@@ -102,6 +102,11 @@ $$('[data-pick]').forEach(b => b.addEventListener('click', () => {
   scrollToEl($('#calc'));
   if (motion) gsap.fromTo('.calc', { scale: .97 }, { scale: 1, duration: 1, delay: 1.1, ease: 'elastic.out(1, .45)' });
 }));
+$$('[data-chem]').forEach(b => b.addEventListener('click', () => {
+  form.querySelector('[data-price="2000"]').checked = true;
+  render();
+  scrollToEl($('#calc'));
+}));
 setKind(new URLSearchParams(location.search).get('type') || 'wet'); // ?type=general — для рекламы
 
 /* ---------- до / после ---------- */
