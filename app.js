@@ -18,7 +18,7 @@ let lenis = null;
 if (motion) {
   gsap.registerPlugin(ScrollTrigger);
   if (window.Lenis) {
-    lenis = new Lenis({ lerp: 0.085 });
+    lenis = new Lenis({ lerp: 0.07, wheelMultiplier: 0.85 });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(t => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
@@ -134,12 +134,18 @@ $$('.ba-tabs button').forEach(b => b.addEventListener('click', () => {
 /* ---------- что входит: чек-листы ---------- */
 const setCl = name => {
   $$('.cl-tabs [data-cl]').forEach(x => { x.classList.toggle('on', x.dataset.cl === name); x.setAttribute('aria-pressed', x.dataset.cl === name); });
-  $$('.cl-panel').forEach(p => { p.hidden = p.dataset.panel !== name; });
-  const panel = $(`.cl-panel[data-panel="${name}"]`);
-  if (motion) {
-    gsap.from($$('.cl-scope, .cl-card, .cl-box', panel), { y: 26, opacity: 0, duration: .6, stagger: .06, ease: 'power3.out' });
+  const panel = $(`.cl-panel[data-panel="${name}"]`), prev = $$('.cl-panel').find(p => !p.hidden && p !== panel);
+  const show = () => {
+    $$('.cl-panel').forEach(p => { p.hidden = p !== panel; });
+    if (!motion) return;
+    gsap.from($$('.cl-scope, .cl-card, .cl-box', panel), { y: 22, opacity: 0, duration: .7, stagger: .05, ease: 'power3.out', clearProps: 'transform,opacity' });
     ScrollTrigger.refresh(); // высота блока меняется — пересчитать закреплённую секцию ниже
-  }
+  };
+  clearTimeout(setCl.t);
+  if (motion && prev) {
+    gsap.to(prev, { opacity: 0, duration: .2, ease: 'power1.in', overwrite: true });
+    setCl.t = setTimeout(() => { gsap.set(prev, { clearProps: 'opacity' }); show(); }, 210);
+  } else show();
 };
 $$('[data-cl]').forEach(b => b.addEventListener('click', () => {
   setCl(b.dataset.cl);
@@ -200,8 +206,8 @@ if (motion) {
     splitWords(h);
     gsap.from($$('.w > span', h), { yPercent: 115, duration: 1, ease: 'power4.out', stagger: .06, scrollTrigger: { trigger: h, start: 'top 88%', once: true } });
   });
-  $$('[data-reveal]').forEach(el => gsap.from(el, { y: 36, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } }));
-  $$('[data-stagger]').forEach(g => gsap.from(g.children, { y: 50, opacity: 0, duration: .9, ease: 'power3.out', stagger: .08, scrollTrigger: { trigger: g, start: 'top 88%', once: true } }));
+  $$('[data-reveal]').forEach(el => gsap.from(el, { y: 28, opacity: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } }));
+  $$('[data-stagger]').forEach(g => gsap.from(g.children, { y: 40, opacity: 0, duration: 1.1, ease: 'power3.out', stagger: .1, scrollTrigger: { trigger: g, start: 'top 88%', once: true } }));
   $$('[data-count]').forEach(el => {
     const to = +el.dataset.count, dec = (el.dataset.count.split('.')[1] || '').length, o = { v: 0 };
     el.textContent = (0).toFixed(dec);
@@ -209,7 +215,7 @@ if (motion) {
   });
 
   // параллакс первого экрана
-  const heroST = { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true };
+  const heroST = { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .6 };
   gsap.to('.hero-bg', { yPercent: 10, ease: 'none', scrollTrigger: heroST });
   gsap.to('.hero-visual', { yPercent: -10, ease: 'none', scrollTrigger: { ...heroST } });
 
@@ -217,11 +223,11 @@ if (motion) {
   stage.classList.add('scrub');
   const ba = { p: 0 };
   setBA(0);
-  gsap.to(ba, { p: 1, ease: 'none', onUpdate: () => setBA(ba.p), scrollTrigger: { trigger: '.ba-pin', start: 'top top', end: '+=140%', pin: true, scrub: .7, anticipatePin: 1 } });
+  gsap.to(ba, { p: 1, ease: 'none', onUpdate: () => setBA(ba.p), scrollTrigger: { trigger: '.ba-pin', start: 'top top', end: '+=140%', pin: true, scrub: 1, anticipatePin: 1 } });
 
   // шаги: линия дорисовывается, кружки загораются
   const sp = { v: 0 };
-  gsap.to(sp, { v: 1, ease: 'none', onUpdate: () => setSteps(sp.v), scrollTrigger: { trigger: '.steps-wrap', start: 'top 78%', end: 'bottom 62%', scrub: .5 } });
+  gsap.to(sp, { v: 1, ease: 'none', onUpdate: () => setSteps(sp.v), scrollTrigger: { trigger: '.steps-wrap', start: 'top 78%', end: 'bottom 62%', scrub: .9 } });
 
   if (fine) {
     // кнопки «притягиваются» к курсору
