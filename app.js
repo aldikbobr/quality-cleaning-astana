@@ -17,6 +17,7 @@ if (!motion) root.classList.remove('anim', 'intro-on');
 let lenis = null;
 if (motion) {
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true }); // адресная строка телефона не должна пересчитывать закрепления
   if (window.Lenis) {
     lenis = new Lenis({ lerp: 0.07, wheelMultiplier: 0.85 });
     lenis.on('scroll', ScrollTrigger.update);
