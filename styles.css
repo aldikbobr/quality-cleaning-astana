@@ -135,14 +135,14 @@ h1 { font-weight: 900; text-transform: uppercase; color: var(--navy); font-size:
 @keyframes trail { from { opacity: .95; translate: 0 0; scale: .4; } to { opacity: 0; translate: 0 -56px; scale: 1.1; } }
 @media (max-width: 960px) {
   .hero { min-height: auto; padding: 100px 0 120px; }
-  .hero-in { grid-template-columns: 1fr; gap: 44px; }
+  .hero-in { grid-template-columns: minmax(0, 1fr); gap: 44px; }
   .hero-veil { background: linear-gradient(180deg, rgba(247, 252, 255, .95) 0%, rgba(236, 246, 255, .87) 55%, rgba(222, 238, 252, .8) 100%); }
   .hero-visual { width: min(330px, 74%); }
   .chip { padding: 9px 12px; font-size: .72rem; } .chip b { font-size: 1.2rem; }
   .chip-rating { left: -14%; } .chip-years { right: -12%; } .chip-247 { left: -10%; }
 }
 @media (min-width: 961px) { h1 { font-size: clamp(2.4rem, 4vw, 3.5rem); } }
-@media (max-width: 560px) { .hero-cta .btn { width: 100%; } }
+@media (max-width: 560px) { .hero-cta .btn { width: 100%; white-space: normal; text-align: center; line-height: 1.25; } }
 
 /* ---------- секции ---------- */
 .section { position: relative; padding: clamp(72px, 10vw, 128px) 0; }
@@ -353,7 +353,8 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .wave-top { top: -1px; bottom: auto; fill: var(--ice-2); rotate: 180deg; }
 .cta .spark { font-size: 26px; } .c1 { top: 24%; left: 46%; } .c2 { top: 64%; left: 4%; font-size: 18px; animation-delay: -1.2s; } .c3 { bottom: 12%; right: 6%; animation-delay: -2.1s; }
 .cta-in { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
-@media (max-width: 900px) { .cta-in { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .cta-in { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .cta-btns .btn { width: 100%; white-space: normal; text-align: center; line-height: 1.25; } }
 .cta h2 { color: #fff; }
 .cta h2 em { background: linear-gradient(135deg, #cfeaff, #7cc8f8); -webkit-background-clip: text; background-clip: text; }
 .script.light { margin-top: 0; color: #fff; text-shadow: 0 2px 14px rgba(14, 42, 76, .35); clip-path: none; }
