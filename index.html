@@ -23,8 +23,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&amp;family=Caveat:wght@700&amp;display=swap">
 <link rel="stylesheet" href="styles.css">
 <script>
-(function(){var d=document.documentElement;d.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('anim');try{if(!sessionStorage.getItem('qc-intro'))d.classList.add('intro-on')}catch(e){d.classList.add('intro-on')}
-setTimeout(function(){d.classList.remove('anim','intro-on')},6000)})();
+(function(){var d=document.documentElement;d.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('anim');
+setTimeout(function(){d.classList.remove('anim')},6000)})();
 </script>
 <script type="application/ld+json">
 {
@@ -52,7 +52,6 @@ setTimeout(function(){d.classList.remove('anim','intro-on')},6000)})();
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="sq-g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7cc8f8"/><stop offset="1" stop-color="#1a6fcf"/></linearGradient>
   </defs>
   <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/></symbol>
   <symbol id="i-broom" viewBox="0 0 24 24"><path d="M20 3.5 12.5 11"/><path d="M12.5 11c-2.2-1.4-5-.6-6.1 1.6L3.5 20c3.6.4 7.4-.6 9.3-3.3 1.4-1.9 1.4-4.2-.3-5.7Z"/><path d="M6.6 15.6 9 18M8.4 13.4l2.8 2.8"/></symbol>
@@ -93,18 +92,6 @@ setTimeout(function(){d.classList.remove('anim','intro-on')},6000)})();
   <symbol id="i-squeegee" viewBox="0 0 24 24"><path d="M5 7.5l14-4"/><path d="M12 5.5l1.2 4"/><path d="M13.2 9.5 16 20"/></symbol>
 </svg>
 
-<!-- Заставка: «грязное стекло», которое протирает скребок (один раз за сессию) -->
-<div class="intro" id="intro" aria-hidden="true">
-  <canvas></canvas>
-  <svg class="squeegee" viewBox="0 0 120 400" preserveAspectRatio="none">
-    <rect x="108" y="6" width="12" height="388" rx="6" fill="#14365f"/>
-    <rect x="90" y="0" width="20" height="400" rx="7" fill="url(#sq-g)"/>
-    <rect x="95" y="22" width="4" height="356" rx="2" fill="#fff" opacity=".5"/>
-    <path d="M94 212 58 170" stroke="#c9dbee" stroke-width="10" stroke-linecap="round"/>
-    <path d="M60 172 10 118" stroke="#14365f" stroke-width="22" stroke-linecap="round"/>
-    <path d="M50 160 18 126" stroke="#7cc8f8" stroke-width="5" stroke-linecap="round" opacity=".8"/>
-  </svg>
-</div>
 
 <header class="header">
   <div class="wrap header-in">

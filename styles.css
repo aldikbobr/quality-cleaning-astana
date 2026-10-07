@@ -16,7 +16,6 @@ html { -webkit-text-size-adjust: 100%; }
 html:not(.lenis) { scroll-behavior: smooth; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-stopped { overflow: clip; }
-html.intro-on { overflow: hidden; }
 body { font-family: "Montserrat", system-ui, sans-serif; font-weight: 500; color: var(--ink); background: #f6fbff; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: clip; }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -84,16 +83,7 @@ section[id] { scroll-margin-top: 80px; }
 }
 @media (max-width: 560px) { .header-cta { display: none; } .burger { margin-left: auto; } }
 
-/* ---------- заставка ---------- */
-.intro { display: none; }
-html.intro-on .intro { display: block; position: fixed; inset: 0; z-index: 200; background: #c6dcf2; cursor: pointer; transition: opacity .5s; }
-.intro canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.squeegee { position: absolute; left: 0; top: 0; transform-origin: 100% 50%; transform: translateX(-400px); filter: drop-shadow(0 14px 20px rgba(20, 54, 95, .35)); will-change: transform; }
-.intro.out { opacity: 0; }
-.burst { position: fixed; z-index: 201; pointer-events: none; color: #fff; text-shadow: 0 0 16px rgba(124, 200, 248, 1), 0 0 4px #fff; animation: burst 1.1s ease-out forwards; }
-@keyframes burst { 0% { scale: 0; opacity: 0; rotate: 0deg; } 35% { scale: 1.3; opacity: 1; } 100% { scale: 0; opacity: 0; rotate: 140deg; } }
 html.anim [data-hero] { opacity: 0; }
-html.intro-on .fab { opacity: 0; }
 
 /* ---------- первый экран ---------- */
 .hero { position: relative; display: flex; align-items: center; min-height: 100svh; padding: 120px 0 150px; overflow: hidden; background: var(--ice-2); }

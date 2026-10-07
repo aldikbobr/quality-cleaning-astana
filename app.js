@@ -12,7 +12,7 @@ const WA = 'https://wa.me/77779527961?text=';
 $$('[data-wa]').forEach(a => { a.href = WA + encodeURIComponent(a.dataset.wa || 'Здравствуйте! Хочу заказать уборку.'); });
 
 // без GSAP (CDN недоступен) или при «меньше движения» — статичная страница
-if (!motion) root.classList.remove('anim', 'intro-on');
+if (!motion) root.classList.remove('anim');
 
 let lenis = null;
 if (motion) {
@@ -275,103 +275,4 @@ if (motion) {
   setSteps(1);
 }
 
-/* ---------- заставка: скребок протирает «грязное стекло» ---------- */
-function drawDirt(c, W, H) {
-  const R = Math.random;
-  c.fillStyle = 'rgba(198, 188, 166, .96)';
-  c.fillRect(0, 0, W, H);
-  for (let i = 0; i < 70; i++) {
-    const x = R() * W, y = R() * H, r = 60 + R() * 260, g = c.createRadialGradient(x, y, 0, x, y, r), dark = R() < .65;
-    g.addColorStop(0, dark ? `rgba(110, 90, 58, ${.18 + R() * .24})` : `rgba(255, 250, 240, ${.12 + R() * .18})`);
-    g.addColorStop(1, 'rgba(0, 0, 0, 0)');
-    c.fillStyle = g;
-    c.fillRect(x - r, y - r, r * 2, r * 2);
-  }
-  c.lineCap = 'round';
-  for (let i = 0; i < 14; i++) { // старые разводы от тряпки
-    const x = R() * W, y = R() * H;
-    c.strokeStyle = `rgba(255, 255, 255, ${.06 + R() * .1})`;
-    c.lineWidth = 20 + R() * 50;
-    c.beginPath(); c.moveTo(x, y);
-    c.quadraticCurveTo(x + R() * 300 - 150, y + R() * 200 - 100, x + R() * 400 - 200, y + R() * 300 - 150);
-    c.stroke();
-  }
-  for (let i = 0, n = W * H / 600; i < n; i++) { // пылинки
-    c.fillStyle = `rgba(${60 + R() * 40 | 0}, ${50 + R() * 30 | 0}, 35, ${R() * .55})`;
-    c.beginPath(); c.arc(R() * W, R() * H, .4 + R() * 1.6, 0, 7); c.fill();
-  }
-  // надпись «пальцем по пыли»
-  const fs = Math.max(34, Math.min(W / 11, 96));
-  c.save();
-  c.globalCompositeOperation = 'destination-out';
-  c.globalAlpha = .8;
-  c.font = `700 ${fs}px Caveat, cursive`;
-  c.textAlign = 'center'; c.textBaseline = 'middle';
-  c.lineWidth = fs * .07; c.lineJoin = 'round';
-  c.fillText('Сейчас станет чисто ✦', W / 2, H / 2);
-  c.strokeText('Сейчас станет чисто ✦', W / 2, H / 2);
-  c.restore();
-}
-
-function burst() {
-  for (let i = 0; i < 18; i++) {
-    const s = document.createElement('span');
-    s.className = 'burst'; s.textContent = '✦';
-    s.style.cssText = `left:${Math.random() * 96}vw;top:${Math.random() * 92}vh;font-size:${14 + Math.random() * 30}px;animation-delay:${Math.random() * .35}s`;
-    document.body.append(s);
-    setTimeout(() => s.remove(), 1600);
-  }
-}
-
-async function intro() {
-  const box = $('#intro'), cv = $('canvas', box), sq = $('.squeegee', box), c = cv.getContext('2d');
-  const W = innerWidth, H = innerHeight, d = Math.min(devicePixelRatio || 1, 2);
-  history.scrollRestoration = 'manual';
-  scrollTo(0, 0);
-  lenis?.stop();
-  await Promise.race([document.fonts.load('700 80px Caveat'), new Promise(r => setTimeout(r, 800))]);
-  cv.width = W * d; cv.height = H * d; c.scale(d, d);
-  drawDirt(c, W, H);
-  box.style.background = 'transparent';
-
-  const n = 3, bh = H / n, pad = 30, h = bh + pad, sw = h * .3;
-  sq.style.height = h + 'px'; sq.style.width = sw + 'px';
-  const strokes = Array.from({ length: n }, (_, i) => ({ y: i * bh - pad / 2, dir: i % 2 ? -1 : 1 }));
-  const dur = 560, gap = 70, x0 = -sw, x1 = W + sw;
-  const ease = t => t < .5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
-  let t0 = null, revealed = false, done = false;
-
-  const finish = () => {
-    if (done) return;
-    done = true;
-    if (!revealed) { revealed = true; heroIn(); }
-    box.classList.add('out');
-    burst();
-    try { sessionStorage.setItem('qc-intro', '1'); } catch {}
-    setTimeout(() => { box.remove(); root.classList.remove('intro-on'); lenis?.start(); ScrollTrigger.refresh(); }, 520);
-  };
-  box.addEventListener('click', finish);
-  addEventListener('keydown', finish, { once: true });
-
-  const frame = now => {
-    if (done) return;
-    if (t0 === null) t0 = now + 550; // пауза: пусть увидят пыльное стекло
-    const t = now - t0;
-    if (t >= 0) {
-      const i = Math.min(Math.floor(t / (dur + gap)), n - 1);
-      const k = Math.min((t - i * (dur + gap)) / dur, 1);
-      const s = strokes[i], e = ease(k);
-      const x = s.dir > 0 ? x0 + (x1 - x0) * e : x1 - (x1 - x0) * e;
-      c.globalCompositeOperation = 'destination-out';
-      c.fillRect(s.dir > 0 ? x0 : x, s.y, s.dir > 0 ? x - x0 : x1 - x, h);
-      sq.style.transform = `translate(${x - sw}px, ${s.y}px) scaleX(${s.dir})`;
-      if (i >= 1 && !revealed) { revealed = true; heroIn(); }
-      if (i === n - 1 && k >= 1) return finish();
-    }
-    requestAnimationFrame(frame);
-  };
-  requestAnimationFrame(frame);
-}
-
-if (motion && root.classList.contains('intro-on')) intro();
-else heroIn();
+heroIn();
