@@ -64,7 +64,8 @@ section[id] { scroll-margin-top: 80px; }
 .header-phone { display: flex; align-items: center; gap: 8px; font-weight: 800; color: var(--navy); white-space: nowrap; }
 .header-phone .ic { color: var(--blue); }
 .burger { display: none; }
-@media (max-width: 1180px) { .header-phone { display: none; } }
+@media (max-width: 1180px) { .header-phone { display: none; } .nav { gap: 18px; font-size: .88rem; } .header-in { gap: 18px; } }
+.nav a { white-space: nowrap; }
 @media (max-width: 960px) {
   .header-in { gap: 12px; height: 70px; }
   .logo img, .header.scrolled .logo img { height: 52px; }
