@@ -120,6 +120,7 @@ const setBA = p => {
 const unsplash = id => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&h=1000&q=70`;
 const BA = {
   real: { before: 'img/ba-real-before.jpg', after: 'img/ba-real-after.jpg', note: 'Реальная работа Quality Клининг: полка под раковиной до и после уборки.' },
+  hood: { before: 'img/hood-before.jpg', after: 'img/hood-after.jpg', portrait: true, note: 'Реальная работа Quality Клининг: фильтры вытяжки и противень с решёткой до и после мойки.' },
   living: { id: '1633505899118-4ca6bd143043' }, kitchen: { id: '1610276173132-c47d148ab626' }, bath: { id: '1552321554-5fefe8c9ef14' },
 };
 const baNote = $('#ba-note'), [baBefore, baAfter] = [$('.ba-before img', stage), $('.ba-after img', stage)];
@@ -130,6 +131,7 @@ $$('.ba-tabs button').forEach(b => b.addEventListener('click', () => {
   pre.onload = pre.onerror = () => {
     baBefore.src = before; baAfter.src = after;
     stage.classList.toggle('fake', !!s.id);
+    stage.classList.toggle('portrait', !!s.portrait);
     baNote.textContent = s.note || 'Иллюстрация. Реальную работу смотрите во вкладке «Наш объект» и в разделе «Наши работы».';
     stage.classList.remove('swap');
   };
@@ -170,6 +172,10 @@ lb.addEventListener('click', e => { if (e.target === lb || e.target.closest('.lb
 baRange.addEventListener('input', () => { setRangeFill(baRange); setBA(baRange.value / 100); });
 setRangeFill(baRange);
 setBA(.5);
+
+/* ---------- видео: одновременно играет только одно ---------- */
+const vids = $$('.vid video');
+vids.forEach(v => v.addEventListener('play', () => vids.forEach(o => { if (o !== v) o.pause(); })));
 
 /* ---------- отзывы: бесшовная лента ---------- */
 $$('.mq-track').forEach(t => t.append(...[...t.children].map(n => { const c = n.cloneNode(true); c.setAttribute('aria-hidden', 'true'); return c; })));
