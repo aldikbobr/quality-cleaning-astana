@@ -69,7 +69,7 @@ section[id] { scroll-margin-top: 80px; }
 @media (max-width: 960px) {
   .header-in { gap: 12px; height: 70px; }
   .logo img, .header.scrolled .logo img { height: 52px; }
-  .nav { position: fixed; inset: 0; flex-direction: column; justify-content: center; align-items: center; gap: 22px; background: rgba(255, 255, 255, .97); font-size: 1.5rem; font-weight: 800; opacity: 0; visibility: hidden; transition: opacity .4s, visibility .4s; }
+  .nav { position: fixed; inset: 0; flex-direction: column; justify-content: center; align-items: center; gap: 22px; background: #f6fbff; font-size: 1.5rem; font-weight: 800; opacity: 0; visibility: hidden; transition: opacity .4s, visibility .4s; }
   .nav-open .nav { opacity: 1; visibility: visible; }
   .nav a { padding: 8px 16px; opacity: 0; translate: 0 24px; transition: opacity .5s, translate .6s var(--ease); }
   .nav-open .nav a { opacity: 1; translate: 0 0; }
