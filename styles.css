@@ -334,7 +334,9 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .rating-big > b { font-size: clamp(2.8rem, 6vw, 4rem); font-weight: 900; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .rating-big > span { display: grid; gap: 4px; }
 .stars { display: flex; gap: 2px; color: #d9a32b; }
-.stars .ic { width: 18px; height: 18px; }
+.stars .ic { width: 18px; height: 18px; max-width: none; flex: none; } /* Safari иначе сжимает звёзды и они налезают на цифру */
+.hero-stars { flex: none; width: 98px; }
+.hero-rate { min-width: 0; }
 .marquee { overflow: hidden; padding: 12px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
 .mq-track { display: flex; width: max-content; animation: mq calc(var(--n, 5) * 14s) linear infinite; } /* скорость не зависит от числа отзывов */
 .marquee.rev .mq-track { animation-direction: reverse; animation-duration: calc(var(--n, 5) * 17s); }
@@ -479,6 +481,7 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 @media (hover: none) { .cap { opacity: 1; translate: 0 0; } }
 @media (max-width: 900px) { .gallery { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 190px; } }
 @media (min-width: 601px) and (max-width: 900px) { #works .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 170px; } } /* 32 клетки делятся на 4 — без дыр в сетке */
+@media (max-width: 600px) { .g-tile.duo.tall.land { grid-row: auto; } }
 @media (max-width: 600px) { .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; gap: 10px; } .g-tile.duo.tall { grid-row: span 2; } }
 .lightbox { margin: auto; padding: 0; border: 0; background: transparent; overflow: visible; max-width: min(1100px, 94vw); }
 .lightbox::backdrop { background: rgba(12, 30, 54, .85); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
