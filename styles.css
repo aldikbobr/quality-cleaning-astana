@@ -187,6 +187,10 @@ h2 em { font-style: normal; background: var(--grad); -webkit-background-clip: te
 .extras-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px 28px; }
 .extra { display: flex; align-items: flex-start; gap: 16px; padding: 12px; border-radius: 18px; transition: background-color .35s; }
 .extra:hover { background: var(--ice-2); }
+.extra-wide { align-items: center; flex-wrap: wrap; margin-top: 18px; padding: 16px 20px; background: var(--ice-2); border: 1px dashed #b5d3f1; }
+.extra-wide > div { flex: 1 1 240px; }
+.extra-wide .btn { margin-left: auto; }
+@media (max-width: 560px) { .extra-wide { flex-direction: column; align-items: flex-start; } .extra-wide .btn { margin-left: 0; width: 100%; } }
 .extra h4 { font-size: 1rem; font-weight: 800; line-height: 1.3; color: var(--navy); }
 .extra p { font-size: .9rem; color: var(--muted); }
 .extra .price { margin-top: 8px; padding: 5px 12px; font-size: .8rem; }
