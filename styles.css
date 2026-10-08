@@ -336,8 +336,8 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .stars { display: flex; gap: 2px; color: #d9a32b; }
 .stars .ic { width: 18px; height: 18px; }
 .marquee { overflow: hidden; padding: 12px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
-.mq-track { display: flex; width: max-content; animation: mq 70s linear infinite; }
-.marquee.rev .mq-track { animation-direction: reverse; animation-duration: 85s; }
+.mq-track { display: flex; width: max-content; animation: mq calc(var(--n, 5) * 14s) linear infinite; } /* скорость не зависит от числа отзывов */
+.marquee.rev .mq-track { animation-direction: reverse; animation-duration: calc(var(--n, 5) * 17s); }
 .marquee:hover .mq-track { animation-play-state: paused; }
 @keyframes mq { to { transform: translateX(-50%); } }
 .rcard { flex: none; display: flex; flex-direction: column; gap: 12px; width: min(360px, 82vw); margin-right: 18px; padding: 24px; transition: box-shadow .4s, border-color .4s; }
