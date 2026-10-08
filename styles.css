@@ -107,6 +107,7 @@ h1 { font-weight: 900; text-transform: uppercase; color: var(--navy); font-size:
 .line.big { font-size: 1.5em; line-height: .98; }
 .line.big > span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .04em; }
 .script { position: relative; display: inline-flex; align-items: center; gap: 8px; margin: 16px 0 22px; font-family: var(--script); font-weight: 700; font-size: clamp(1.3rem, 5.3vw, 2.2rem); line-height: 1.1; white-space: nowrap; color: var(--blue-2); rotate: -2deg; clip-path: inset(-10% -5% -40% 0%); }
+@media (max-width: 420px) { .script { white-space: normal; flex-wrap: wrap; justify-content: flex-start; } } /* на узких телефонах подпись переносится, а не вылезает за край */
 .script .heart { width: .75em; height: .75em; stroke-width: 2.2; }
 .swoosh { position: absolute; left: 0; bottom: -.32em; width: 88%; height: .38em; overflow: visible; }
 .swoosh path { fill: none; stroke: var(--sky); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
