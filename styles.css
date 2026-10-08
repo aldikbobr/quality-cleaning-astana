@@ -464,7 +464,7 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 /* живые фото */
 .vids { display: grid; grid-template-columns: repeat(3, minmax(0, 300px)); justify-content: center; gap: 18px; margin-top: 28px; }
 .vid { margin: 0; overflow: hidden; border-radius: 22px; background: #fff; border: 1px solid var(--line); box-shadow: 0 14px 34px -22px rgba(20, 54, 95, .45); }
-.vid video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #0e2a4c; }
+.vid img, .vid video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #0e2a4c; }
 .vid figcaption { padding: 12px 16px; font-weight: 700; font-size: .88rem; color: var(--navy); }
 @media (max-width: 860px) { .vids { grid-template-columns: repeat(2, minmax(0, 300px)); } .vid:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 9px); } } /* третье видео по центру под первыми двумя */
 @media (max-width: 560px) { .vids { gap: 10px; } .vid:last-child:nth-child(odd) { width: calc(50% - 5px); } .vid figcaption { padding: 10px 12px; font-size: .78rem; } }
