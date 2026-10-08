@@ -114,6 +114,13 @@ h1 { font-weight: 900; text-transform: uppercase; color: var(--navy); font-size:
 .hero-lead { max-width: 34em; margin-bottom: 28px; font-size: 1.06rem; color: var(--muted); }
 .hero-lead strong { color: var(--navy); font-weight: 700; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
+.hero-checks { display: grid; gap: 10px; margin-bottom: 22px; }
+.hero-checks-label { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--navy); }
+.hero-checks-label .ic { color: var(--blue-2); }
+.hero-checks-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero-checks-btns button { padding: 11px 18px; border-radius: 999px; border: 2px solid var(--line); background: rgba(255, 255, 255, .9); font-weight: 800; font-size: .86rem; color: var(--navy); transition: border-color .3s, color .3s, scale .3s var(--ease); }
+.hero-checks-btns button:hover { border-color: var(--blue); color: var(--blue-2); }
+.hero-checks-btns button:active { scale: .96; }
 .hero-trust { display: flex; flex-wrap: wrap; gap: 10px 22px; list-style: none; font-size: .9rem; font-weight: 600; color: var(--navy); }
 .hero-trust li { display: flex; align-items: center; gap: 8px; }
 .hero-trust .star { color: #d9a32b; }
